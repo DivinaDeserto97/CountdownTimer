@@ -1,0 +1,15 @@
+:root {
+  /* Constant */
+  
+  /* light */
+  --light-bg-coller: rgb(255, 255, 255);
+  --ligt-font-coller: rgb(0, 0, 0);
+
+  /* dark */
+
+body {
+  padding: 25px;
+  background-color: var(--light-bg-coller);
+  color: var(--ligt-font-coller);
+  font-size: 25px;
+}
