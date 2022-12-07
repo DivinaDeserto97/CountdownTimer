@@ -8,6 +8,15 @@
   /* dark  */
 }
 
+/* font */
+@font-face {
+  font-family: "myHandwriting";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../Assets/myFont/MyHandwritting.ttf");
+}
+
+/* Begin von den definitionen */
 body{
   background: url('../Assets/images/countdown.gif');
   background-repeat: no-repeat;
@@ -17,12 +26,24 @@ body{
   background: url('../Assets/images/Final.jpg');
 }
 
+
+.titel{
+  color: let(--ligt-font-color);
+  font-family: "myHandwriting";
+}
 .countdownNumber {
   color: let(--ligt-font-color);
+  font-family: "myHandwriting";
 }
 .countdownType{
   color: let(--ligt-font-color);
+  font-family: "myHandwriting";
 }
 .countdownDevinition {
   color: let(--ligt-font-color);
+  font-family: "myHandwriting";  
+}
+.button {
+  color: let(--ligt-font-color);
+  font-family: "myHandwriting"; 
 }
