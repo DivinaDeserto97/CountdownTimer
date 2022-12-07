@@ -93,10 +93,14 @@ function subSeconds(){
 function uebergabe(){
   ram1 = angabeDay * 24 * 60 * 60;
   rnanana = angabeHouers * 60 * 60;
-  rnaihe = angabeMinuten * 60
+  rnaihe = angabeMinuten * 60;
   countDown = ram1 + rnanana + rnaihe + angabeSeconds * 1000;
 
-  x = setInterval(function () {
+  // aingabe feld löschen
+    document.getElementById(startButton).remove();
+    document.getElementById(eingabe).remove();
+
+    intervalId = setInterval(function () {
     const now = new Date().getTime(),
       distance = countDown + now;
 
@@ -111,19 +115,21 @@ function uebergabe(){
         (distance % minute) / second
       ));
 
+      if (distance < 306000) {
+        // Audio datatei
+        
+      }
     if (distance < 0) {
-      // was wenn abgelaufen
-
+      // Bildänderung
+      var elment = document.body;
+      elment.classList.toggle("bodyNew");
+      stopCountdown();
     }
     //seconds
   }, 0);
 }
 
-// Countdown
-
-
-
-// 
-/*
-    
- */
+// Stopp Countdown
+function stopCountdown() {
+  // JavaScript Funktion clearInterval() aufrufen.
+  clearInterval(intervalId);

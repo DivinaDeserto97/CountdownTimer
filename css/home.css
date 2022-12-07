@@ -13,6 +13,10 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
 }
+.bodyNew{
+  background: url('../Assets/images/Final.jpg');
+}
+
 .countdownNumber {
   color: let(--ligt-font-color);
 }
