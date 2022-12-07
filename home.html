@@ -15,100 +15,49 @@
     <!-- my css -->
     <link rel="stylesheet" href="css/home.css" />
     <!-- my js -->
-    <script src="js/home.js"></script>
+    <script src="js/home.js"></script> <!-- kein defer bei globalen -->  
 </head>
 
-<body>
+<body class="das">
     <header>
-        <h1>Countdowun Timer</h1>
+        <h1>Countdown Timer</h1>
     </header>
     <section>
-        
         <div>
-            <span>00</span><span>:</span><span>00</span><span>:</span><span>00</span><span>:</span><span>00</span>
+            <span class="countdownNumber" id="day"></span>
+            <span class="countdownNumber" id="hours"></span>
+            <span class="countdownNumber" id="minutes"></span>
+            <span class="countdownNumber" id="seconds"></span>
         </div>
         <div>
-            <span>Day</span><span>:</span><span>Houers</span><span>:</span><span>Minits</span><span>:</span><span>Sec.</span>
+            <span class="countdownType">day</span>
+            <span class="countdownType">hours</span>
+            <span class="countdownType">minutes</span>
+            <span class="countdownType">seconds</span>
         </div>
         <div>
-            <div>
-                00
-            </div>
-            <div>
-                <button type="button"
-                class="btn btn-light"
-                >
-                    <i class="fa-sharp fa-solid fa-caret-up"></i>
-                </button>
-                <button type="button"
-                class="btn btn-light"
-                >
-                    <i class="fa-solid fa-caret-down"></i>
-                </button>
-            </div>
-            <div>
-                00
-            </div>
-            <div>
-                <button type="button"
-                class="btn btn-light"
-                >
-                    <i class="fa-sharp fa-solid fa-caret-up"></i>
-                </button>
-                <button type="button"
-                class="btn btn-light"
-                >
-                    <i class="fa-solid fa-caret-down"></i>
-                </button>
-            </div>
-            <div>
-                00
-            </div>
-            <div>
-                <button type="button"
-                class="btn btn-light"
-                onclick="addSec">
-                    <i class="fa-sharp fa-solid fa-caret-up"></i>
-                </button>
-                <button type="button"
-                class="btn btn-light"
-                onclick="addSec">
-                    <i class="fa-solid fa-caret-down"></i>
-                </button>
-            </div>
-            <div>
-                00
-            </div>
-            <div>
-                <button type="button"
-                class="btn btn-light"
-                onclick="addSec">
-                    <i class="fa-sharp fa-solid fa-caret-up"></i>
-                </button>
-                <button type="button"
-                class="btn btn-light"
-                onclick="addSec">
-                    <i class="fa-solid fa-caret-down"></i>
-                </button>
-            </div>
-            <div>
-                <button type="button"
-                class="btn btn-primary"
-                onclick="addSec">submit</button>
-            </div>
-        </div>
-        <div>
-            <span>
-                <button type="button"
-                class="btn btn-success"
-                >Start</button>
-            </span>
-            <span>
-                <button type="button"
-                class="btn btn-danger"
-                >Stop</button>
+            <span id='eingabeDay'>
+                <script>
+                    document.write(angabeDay);
+                </script>
             </span>
             
+            <button class="btn btn-light"
+            onclick="addDay();">
+                <i class="fa-solid fa-caret-up"></i>
+            </button>
+            <span class="countdownDevinition"
+            id="eingabehours">
+                00
+            </span>
+            <span class="countdownDevinition"
+            id="eingabeMinutes">
+                00
+            </span>
+            <span class="countdownDevinition"
+            id="eingabeSeconds">
+                00
+            </span>
         </div>
     </section>
     <footer>

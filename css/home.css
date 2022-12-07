@@ -2,14 +2,23 @@
   /* Constant */
   
   /* light */
-  --light-bg-coller: rgb(255, 255, 255);
-  --ligt-font-coller: rgb(0, 0, 0);
+  --light-bg-color: rgb(255, 255, 255);
+  --ligt-font-color: rgb(0, 0, 255);
 
-  /* dark */
+  /* dark  */
+}
 
-body {
-  padding: 25px;
-  background-color: var(--light-bg-coller);
-  color: var(--ligt-font-coller);
-  font-size: 25px;
+body{
+  background: url('../Assets/images/countdown.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.countdownNumber {
+  color: let(--ligt-font-color);
+}
+.countdownType{
+  color: let(--ligt-font-color);
+}
+.countdownDevinition {
+  color: let(--ligt-font-color);
 }
