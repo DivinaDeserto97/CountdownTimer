@@ -1,6 +1,9 @@
 // globale variabeln
 
 let angabeDay = 0;
+let angabeHouers = 0;
+let angabeMinuten = 0;
+
 
 function addDay(){
   angabeDay ++;
@@ -9,14 +12,70 @@ function addDay(){
 }
 function subDay(){
   angabeDay --;
-  document.getElementById("eingabeDay").innerHTML = [angabeDay];
   if(angabeDay < 0){
-    alert 
+    alert('Minus Tage Akzeptier ich nicht');
     angabeDay = 0;
   }
+  document.getElementById("eingabeDay").innerHTML = [angabeDay];
   return angabeDay;
 }
 
+function addHouers(){
+  angabeHouers ++;
+  if(angabeHouers > 23){
+    addDay();
+    angabeHouers = 0;
+  }
+  document.getElementById("eingabeHours").innerHTML = [angabeHouers];
+  return angabeHouers;
+}
+function subHouers(){
+  angabeHouers --;
+  if(angabeHouers < 0){
+    alert('Minus Stunden Akzeptier ich nicht');
+    angabeHouers = 0;
+  }angabeHouers
+  document.getElementById("eingabeHours").innerHTML = [angabeHouers];
+  return angabeHouers;
+}
+
+function addMinutes(){
+  angabeMinuten ++;
+  if(angabeMinuten > 59){
+    addHouers();
+    angabeMinuten = 0;
+  }
+  document.getElementById("eingabeMinutes").innerHTML = [angabeMinuten];
+  return angabeMinuten;
+}
+function subMinutes(){
+  angabeMinuten --;
+  if(angabeMinuten < 0){
+    alert('Minus Minuten Akzeptier ich nicht');
+    angabeHouers = 0;
+  }angabeHouers
+  document.getElementById("eingabeMinutes").innerHTML = [angabeMinuten];
+  return angabeMinuten;
+}
+
+function addMinutes(){
+  angabeMinuten ++;
+  if(angabeMinuten > 59){
+    addHouers();
+    angabeMinuten = 0;
+  }
+  document.getElementById("eingabeMinutes").innerHTML = [angabeMinuten];
+  return angabeMinuten;
+}
+function subMinutes(){
+  angabeMinuten --;
+  if(angabeMinuten < 0){
+    alert('Minus Minuten Akzeptier ich nicht');
+    angabeHouers = 0;
+  }angabeHouers
+  document.getElementById("eingabeMinutes").innerHTML = [angabeMinuten];
+  return angabeMinuten;
+}
 /* // Legen Sie das Datum fest, bis zu dem der Countdown läuft
 let countDownDate = new Date("").getTime();
 

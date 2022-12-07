@@ -16,6 +16,7 @@
         var intervalID;
 
         function startCountdown(){
+            stopCountdown(); // Falls es noch einen Timer gibt: zuerst stoppen.
             setDisplay(maxCount);
             count = maxCount;
             intervalID = setInterval(updateCounter, 1000);
@@ -36,6 +37,7 @@
         }
         function stopCountdown(){
             clearInterval(intervalID);
+            intervalID = null;
         }
     </script>
 
