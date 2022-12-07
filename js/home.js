@@ -1,11 +1,19 @@
 // globale variabeln
 
-var angabeDay = 0;
+let angabeDay = 0;
 
-function addDay(angabeDay){
+function addDay(){
   angabeDay ++;
-  console.log(angabeDay);
   document.getElementById("eingabeDay").innerHTML = [angabeDay];
+  return angabeDay;
+}
+function subDay(){
+  angabeDay --;
+  document.getElementById("eingabeDay").innerHTML = [angabeDay];
+  if(angabeDay < 0){
+    alert 
+    angabeDay = 0;
+  }
   return angabeDay;
 }
 
