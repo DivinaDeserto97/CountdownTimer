@@ -24,17 +24,18 @@
     </header>
     <section>
         <div>
-            <span class="countdownNumber" id="day"></span>
-            <span class="countdownNumber" id="hours"></span>
-            <span class="countdownNumber" id="minutes"></span>
-            <span class="countdownNumber" id="seconds"></span>
+            <span class="countdownNumber" id="day">&nbsp;</span>
+            <span class="countdownNumber" id="hours">&nbsp;</span>
+            <span class="countdownNumber" id="minutes">&nbsp;</span>
+            <span class="countdownNumber" id="seconds">&nbsp;</span>
         </div>
         <div>
-            <span class="countdownType">day</span>
-            <span class="countdownType">hours</span>
-            <span class="countdownType">minutes</span>
-            <span class="countdownType">seconds</span>
+            <span class="countdownType">Day</span>
+            <span class="countdownType">Hours</span>
+            <span class="countdownType">Minutes</span>
+            <span class="countdownType">Seconds</span>
         </div>
+        <!-- Eingabe Feld -->
         <div>
             <span id='eingabeDay'>
                 <script>
@@ -43,13 +44,10 @@
             </span>
             
             <button class="btn btn-light"
-            onclick="addDay();">
-                +
-            </button>
+            onclick="addDay();">+</button>
+
             <button class="btn btn-light"
-            onclick="subDay();">
-                -
-            </button>
+            onclick="subDay();">-</button>
 
 
             <span class="countdownDevinition"
@@ -60,13 +58,9 @@
             </span>
 
             <button class="btn btn-light"
-            onclick="addHouers();">
-                +
-            </button>
+            onclick="addHouers();">+</button>
             <button class="btn btn-light"
-            onclick="subHouers();">
-                -
-            </button>
+            onclick="subHouers();">-</button>
 
             <span class="countdownDevinition"
             id="eingabeMinutes">
@@ -76,20 +70,31 @@
             </span>
 
             <button class="btn btn-light"
-            onclick="addMinutes();">
-                +
-            </button>
+            onclick="addMinutes();">+</button>
             <button class="btn btn-light"
-            onclick="subMinutes();">
-                -
-            </button>
+            onclick="subMinutes();">-</button>
 
             <span class="countdownDevinition"
             id="eingabeSeconds">
-            <script>
-                document.write(angabeMinuten);
-            </script>
+                <script>
+                    document.write(angabeMinuten);
+                </script>
             </span>
+            <button class="btn btn-light"
+            onclick="addSeconds();">+</button>
+            <button class="btn btn-light"
+            onclick="subSeconds();">-</button>
+        </div>
+        <div>   
+            <button type="button"
+            class="btn btn-primary"
+            id="startButton"
+            onclick="uebergabe()">START</button>
+    
+            <button type="button"
+            class="btn btn-success"
+            id="startButton"
+            onclick="stopCountdown()">STOP</button>
         </div>
     </section>
     <footer>

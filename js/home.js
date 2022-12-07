@@ -1,10 +1,24 @@
 // globale variabeln
+  //Zeit umrechnungs constanten
+    const tageStunden = 24;
+    const stundenMinuten = 60;
+    const minutenSecunden = stundenMinuten;
+    const miliSecunden = 1000;
 
-let angabeDay = 0;
-let angabeHouers = 0;
-let angabeMinuten = 0;
+    const maxSecunden = minutenSecunden - 1;
+    const maxMinuten = stundenMinuten - 1;
+    const maxStunden = tageStunden - 1;
+
+  // Eingabe Variabeln
+    let angabeDay = 0;
+    let angabeHouers = 0;
+    let angabeMinuten = 0;
+    let angabeSeconds = 0;
+
+/* Contdown */
 
 
+/* Eingabe Feld  */
 function addDay(){
   angabeDay ++;
   document.getElementById("eingabeDay").innerHTML = [angabeDay];
@@ -22,7 +36,7 @@ function subDay(){
 
 function addHouers(){
   angabeHouers ++;
-  if(angabeHouers > 23){
+  if(angabeHouers > maxStunden){
     addDay();
     angabeHouers = 0;
   }
@@ -34,14 +48,14 @@ function subHouers(){
   if(angabeHouers < 0){
     alert('Minus Stunden Akzeptier ich nicht');
     angabeHouers = 0;
-  }angabeHouers
+  }
   document.getElementById("eingabeHours").innerHTML = [angabeHouers];
   return angabeHouers;
 }
 
 function addMinutes(){
   angabeMinuten ++;
-  if(angabeMinuten > 59){
+  if(angabeMinuten > maxMinuten){
     addHouers();
     angabeMinuten = 0;
   }
@@ -52,57 +66,64 @@ function subMinutes(){
   angabeMinuten --;
   if(angabeMinuten < 0){
     alert('Minus Minuten Akzeptier ich nicht');
-    angabeHouers = 0;
-  }angabeHouers
-  document.getElementById("eingabeMinutes").innerHTML = [angabeMinuten];
-  return angabeMinuten;
-}
-
-function addMinutes(){
-  angabeMinuten ++;
-  if(angabeMinuten > 59){
-    addHouers();
     angabeMinuten = 0;
   }
   document.getElementById("eingabeMinutes").innerHTML = [angabeMinuten];
   return angabeMinuten;
 }
-function subMinutes(){
-  angabeMinuten --;
-  if(angabeMinuten < 0){
-    alert('Minus Minuten Akzeptier ich nicht');
-    angabeHouers = 0;
-  }angabeHouers
-  document.getElementById("eingabeMinutes").innerHTML = [angabeMinuten];
-  return angabeMinuten;
-}
-/* // Legen Sie das Datum fest, bis zu dem der Countdown läuft
-let countDownDate = new Date("").getTime();
 
-// Aktualisieren des Countdowns alle 1 Sekunde
-let countown = setInterval(function() {
-
-  // Abrufen des heutigen Datums und der Uhrzeit
-  let now = new Date().getTime();
-    
-  // Ermitteln Sie den Abstand zwischen jetzt und dem Countdown-Datum
-  let distance = countDownDate - now;
-    
-  // Zeitberechnungen für Tage, Stunden, Minuten und Sekunden
-  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Ausgabe des Ergebnisses in einem Element mit id="demo"
-  document.getElementById("day").innerHTML = days;
-  document.getElementById("hours").innerHTML = hours;
-  document.getElementById("minutes").innerHTML = minutes;
-  document.getElementById("seconds").innerHTML = seconds; 
-  // Wenn der Countdown abgelaufen ist, schreiben Sie einen Text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("final").innerHTML = "EXPIRED";
+function addSeconds(){
+  angabeSeconds ++;
+  if(angabeSeconds > maxSecunden){
+    addMinutes();
+    angabeSeconds = 0;
   }
-}, 1000);
+  document.getElementById("eingabeSeconds").innerHTML = [angabeSeconds];
+  return angabeSeconds;
+}
+function subSeconds(){
+  angabeSeconds --;
+  if(angabeSeconds < 0){
+    alert('Minus Sekunden Akzeptier ich nicht');
+    angabeSeconds = 0;
+  }
+  document.getElementById("eingabeSeconds").innerHTML = [angabeSeconds];
+  return angabeSeconds;
+}
+function uebergabe(){
+  ram1 = angabeDay * 24 * 60 * 60;
+  rnanana = angabeHouers * 60 * 60;
+  rnaihe = angabeMinuten * 60
+  countDown = ram1 + rnanana + rnaihe + angabeSeconds * 1000;
+
+  x = setInterval(function () {
+    const now = new Date().getTime(),
+      distance = countDown + now;
+
+    (document.getElementById("day").innerText = Math.floor(distance / day)),
+      (document.getElementById("hours").innerText = Math.floor(
+        (distance % day) / hour
+      )),
+      (document.getElementById("minutes").innerText = Math.floor(
+        (distance % hour) / minute
+      )),
+      (document.getElementById("seconds").innerText = Math.floor(
+        (distance % minute) / second
+      ));
+
+    if (distance < 0) {
+      // was wenn abgelaufen
+
+    }
+    //seconds
+  }, 0);
+}
+
+// Countdown
+
+
+
+// 
+/*
+    
  */
