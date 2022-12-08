@@ -121,6 +121,7 @@ function toggleStop() {
   document.getElementById("startButton").style.display = "inline-block"
   document.getElementById("stopButton").style.display = "none"
   document.getElementById("startButton").style.display = "inline-block"
+  document.getElementById("eingabeDay").style.display = "inline-block"
   document.getElementById("dayAdd").style.display = "inline-block"
   document.getElementById("daySub").style.display = "inline-block"
   document.getElementById("eingabeHours").style.display = "inline-block"
