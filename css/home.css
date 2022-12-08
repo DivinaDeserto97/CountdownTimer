@@ -28,22 +28,29 @@ body{
 
 
 .titel{
-  color: let(--ligt-font-color);
+  color: var(--ligt-font-color);
   font-family: "myHandwriting";
 }
 .countdownNumber {
-  color: let(--ligt-font-color);
+  color: var(--ligt-font-color);
   font-family: "myHandwriting";
 }
 .countdownType{
-  color: let(--ligt-font-color);
+  color: var(--ligt-font-color);
   font-family: "myHandwriting";
 }
 .countdownDevinition {
-  color: let(--ligt-font-color);
+  color: var(--ligt-font-color);
   font-family: "myHandwriting";  
 }
 .button {
-  color: let(--ligt-font-color);
+  color: var(--ligt-font-color);
   font-family: "myHandwriting"; 
+}
+#stopButton{
+  display: none;
+}
+
+#startButton{
+  display: inline-block;
 }

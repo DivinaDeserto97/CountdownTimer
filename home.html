@@ -8,8 +8,7 @@
     <!-- Auslagerungen -->
     <!-- css -->
     <!-- fonts -->
-    <link href="Assets/css extern/all.min.css" rel="stylesheet" />
-    <link href="Assets/webfonts/free-fa-brands-400.ttf"/>
+    <link href="Assets/css/all.min.css" rel="stylesheet" />
     <!-- Bootsrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- my css -->
@@ -20,13 +19,16 @@
 
 <body class="das">
     <header>
-        <h1 class="d-flex justify-content-center" class="titel">Countdown Timer</h1>
+        <h1 class="d-flex justify-content-center titel">Countdown Timer</h1>
     </header>
     <section>
         <div class="d-flex justify-content-center">
             <span class="countdownNumber" id="day">&nbsp;</span>
+            <span>:</span>
             <span class="countdownNumber" id="hours">&nbsp;</span>
+            <span>:</span>
             <span class="countdownNumber" id="minutes">&nbsp;</span>
+            <span>:</span>
             <span class="countdownNumber" id="seconds">&nbsp;</span>
         </div>
         <div class="d-flex justify-content-center">
@@ -38,16 +40,19 @@
         <!-- Eingabe Feld -->
         <div class="d-flex justify-content-center"
         id="eingabe">
-            <span id='eingabeDay'>
+            <span class="countdownDevinition" 
+            id='eingabeDay'>
                 <script>
                     document.write(angabeDay);
                 </script>
             </span>
             
             <button class="btn btn-light"
+            id="dayAdd"
             onclick="addDay();">+</button>
 
             <button class="btn btn-light"
+            id="daySub"
             onclick="subDay();">-</button>
 
 
@@ -59,13 +64,13 @@
             </span>
 
             <button class="btn btn-light"
-            onclick="addHouers();">
-                <i class="fa-solid fa-caret-up"></i>
-            </button>
+            id="houersAdd"
+            onclick="addHouers();">+ </button>
 
             <button class="btn btn-light"
+            id="houersSub"
             onclick="subHouers();">
-                <i class="fa-solid fa-caret-down"></i>
+                -
             </button>
 
             <span class="countdownDevinition"
@@ -76,9 +81,11 @@
             </span>
 
             <button class="btn btn-light"
+            id="minutesAdd"
             onclick="addMinutes();">+</button>
 
             <button class="btn btn-light"
+            id="minutesSub"
             onclick="subMinutes();">-</button>
 
             <span class="countdownDevinition"
@@ -89,24 +96,25 @@
             </span>
             
             <button class="btn btn-light"
+            id="secondsAdd"
             onclick="addSeconds();">+</button>
 
             <button class="btn btn-light"
+            id="secondsSub"
             onclick="subSeconds();">-</button>
         </div>
         <div class="d-flex justify-content-center">   
             <button type="button"
-            class="btn btn-primary"
-            class="button"
+            class="btn btn-primary button"
             id="startButton"
             onclick="uebergabe()">START</button>
     
             <button type="button"
-            class="btn btn-success"
-            class="button"
+            class="btn btn-success button btn-stop"
             id="stopButton"
             onclick="stopCountdown()">STOP</button>
         </div>
+        <audio id="myAudio"><source src="Assets/Audio/yt5s.com - Europe - The Final Countdown (Official Video) (128 kbps).mp3" type="audio/mpeg"></audio>
     </section>
     <footer>
 

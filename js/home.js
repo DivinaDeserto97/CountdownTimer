@@ -90,19 +90,71 @@ function subSeconds(){
   document.getElementById("eingabeSeconds").innerHTML = [angabeSeconds];
   return angabeSeconds;
 }
+
+// Stopp Countdown
+function stopCountdown() {
+  // JavaScript Funktion clearInterval() aufrufen.
+  clearInterval(x);
+  toggleStop();
+}
+
+
+// Toggle
+function toggleStart() {
+  document.getElementById("startButton").style.display = "none"
+  document.getElementById("stopButton").style.display = "inline-block"
+  document.getElementById("eingabeDay").style.display = "none"
+  document.getElementById("dayAdd").style.display = "none"
+  document.getElementById("daySub").style.display = "none"
+  document.getElementById("eingabeHours").style.display = "none"
+  document.getElementById("houersAdd").style.display = "none"
+  document.getElementById("houersSub").style.display = "none"
+  document.getElementById("eingabeMinutes").style.display = "none"
+  document.getElementById("minutesAdd").style.display = "none"
+  document.getElementById("minutesSub").style.display = "none"
+  document.getElementById("eingabeSeconds").style.display = "none"
+  document.getElementById("secondsAdd").style.display = "none"
+  document.getElementById("secondsSub").style.display = "none"
+}
+
+function toggleStop() {
+  document.getElementById("startButton").style.display = "inline-block"
+  document.getElementById("stopButton").style.display = "none"
+  document.getElementById("startButton").style.display = "inline-block"
+  document.getElementById("dayAdd").style.display = "inline-block"
+  document.getElementById("daySub").style.display = "inline-block"
+  document.getElementById("eingabeHours").style.display = "inline-block"
+  document.getElementById("houersAdd").style.display = "inline-block"
+  document.getElementById("houersSub").style.display = "inline-block"
+  document.getElementById("eingabeMinutes").style.display = "inline-block"
+  document.getElementById("minutesAdd").style.display = "inline-block"
+  document.getElementById("minutesSub").style.display = "inline-block"
+  document.getElementById("eingabeSeconds").style.display = "inline-block"
+  document.getElementById("secondsAdd").style.display = "inline-block"
+  document.getElementById("secondsSub").style.display = "inline-block"
+}
+
 function uebergabe(){
+  const second = 1000;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
+
+  let ram1;
+  let ram2;
+  let ram3;
+
   ram1 = angabeDay * 24 * 60 * 60;
-  rnanana = angabeHouers * 60 * 60;
-  rnaihe = angabeMinuten * 60;
-  countDown = ram1 + rnanana + rnaihe + angabeSeconds * 1000;
+  ram2 = angabeHouers * 60 * 60;
+  ram3 = angabeMinuten * 60;
+  const jetzt = new Date().getTime(),
+  countDown = ((ram1 + ram2 + ram3 + angabeSeconds) * 1000) + jetzt;
 
-  // aingabe feld löschen
-    document.getElementById(startButton).remove();
-    document.getElementById(eingabe).remove();
+  toggleStart();
 
-    intervalId = setInterval(function () {
-    const now = new Date().getTime(),
-      distance = countDown + now;
+    x = setInterval(function () {
+      const now = new Date().getTime(),
+      distance = countDown - now;
 
     (document.getElementById("day").innerText = Math.floor(distance / day)),
       (document.getElementById("hours").innerText = Math.floor(
@@ -115,10 +167,7 @@ function uebergabe(){
         (distance % minute) / second
       ));
 
-      if (distance < 306000) {
-        // Audio datatei
-        
-      }
+  
     if (distance < 0) {
       // Bildänderung
       var elment = document.body;
@@ -128,8 +177,3 @@ function uebergabe(){
     //seconds
   }, 0);
 }
-
-// Stopp Countdown
-function stopCountdown() {
-  // JavaScript Funktion clearInterval() aufrufen.
-  clearInterval(intervalId);
